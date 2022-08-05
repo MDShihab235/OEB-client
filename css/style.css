@@ -8,15 +8,18 @@
   box-sizing: border-box;
 }
 body {
+  margin: auto;
+  max-width: 1280px;
   line-height: 1.5;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
   /* background: #15a271; */
 }
+
 .header {
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-image: url("../images/hero-1.jpg");
   background-repeat: no-repeat;
@@ -24,18 +27,6 @@ body {
   background-size: cover;
   animation: bg 10s linear infinite;
 }
-/* .home-page-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  background-image: url("https://i.pinimg.com/originals/45/3d/81/453d816d7d25d5a4aa075a8c64c79818.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  animation: bg 10s linear infinite;
-} */
 @keyframes bg {
   0% {
     background-image: url("../images/hero-2.jpg");
@@ -53,55 +44,77 @@ body {
     background-image: url("../images/hero-6.jpg");
   }
 }
-.navbar {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  grid-gap: 3px;
-  grid-auto-flow: dense;
-  padding: 30px 40px 30px 40px;
-}
-.navbar .logo {
-  align-self: center;
-}
-.navbar .logo h1 {
-  font-size: 2rem;
-  font-weight: 800;
-  color: rgb(25, 96, 126);
-  letter-spacing: 2px;
-}
-.navbar .nav-element {
-  text-align: center;
-  padding: 10px;
-}
-.navbar .nav-element a {
-  color: #007d6a;
-  font-size: 1.09rem;
-  font-weight: 500;
-}
-.navbar .nav-element a:hover {
-  content: "";
-  border-bottom: 2px solid rgb(85, 215, 255);
-  transition: all 1s right ease-in-out;
-}
+
 .btn {
-  background: #04c8ab;
+  display: inline-block;
+  /* background: #04c8ab; */
+  background: #0083ce;
   color: rgba(251, 251, 251, 0.971);
-  padding: 10px;
+  padding: 12px 25px;
   font-size: 1.2rem;
   font-weight: 500;
   cursor: pointer;
   border: none;
   transition: all 0.5s ease;
-  border-radius: 35px;
+  border-radius: 5px;
 }
 .btn:hover {
-  background-color: rgb(0, 231, 188);
+  background-color: rgb(0, 224, 227);
   color: rgb(22, 31, 44);
   transform: scale(1.1);
 }
-.navbar .btn i {
-  margin-right: 10px;
+nav {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #ffffff;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  z-index: 2000;
 }
+nav .logo {
+  color: rgb(46, 82, 105);
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  align-items: center;
+}
+nav ul li {
+  margin: 0 5px;
+}
+nav ul li a {
+  color: #515151;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a:hover {
+  color: rgb(74, 74, 74);
+  border: 1px solid rgb(54, 138, 153);
+}
+nav .menu-btn i {
+  color: rgb(237, 237, 237);
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"] {
+  display: none;
+}
+/* .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+} */
 
 /* hero section */
 .section {
@@ -117,13 +130,13 @@ body {
   justify-items: center;
 }
 .section .hero-info h1 {
-  grid-area: 1 / 1 / 2 / 2;
+  grid-area: 2/ 2 / 2 / 2;
   font-size: 2rem;
   font-weight: 700;
   color: rgb(255, 255, 255);
   letter-spacing: 2px;
   margin-bottom: 20px;
-  padding: 0 300px 0 300px;
+  padding: 0 200px 0 200px;
 }
 .section .hero-info p {
   font-size: 1rem;
@@ -146,8 +159,8 @@ body {
   height: 100%;
 }
 .slides-img img {
-  width: 627px;
-  height: 400px;
+  width: 100vw;
+  height: 100vh;
   align-items: center;
 }
 /* Caption text */
@@ -177,9 +190,6 @@ body {
   display: inline-block;
   transition: background-color 0.3s ease;
 }
-.active {
-  background-color: #0d4b8e;
-}
 
 /* Fading animation */
 .fade {
@@ -195,8 +205,8 @@ body {
   margin: auto;
 }
 .about-img img {
-  width: 627px;
-  height: 400px;
+  width: 40vw;
+  height: 65vh;
   align-items: center;
 }
 .about-content p {
@@ -240,7 +250,6 @@ textarea {
   padding: 20px;
 }
 .contact-content {
-  border-left: 1px solid #00d9ff;
   padding-left: 10px;
 }
 .contact-info {
@@ -280,11 +289,13 @@ textarea {
   text-align: center;
 }
 .event-child img {
-  width: 350px;
-  height: 300px;
+  width: 300px;
+  height: 250px;
+  border-radius: 10px;
+  border: 5px solid rgb(238, 255, 246);
 }
 .event-pera {
-  padding: 0 25px 0 25px;
+  padding: 0 40px 0 40px;
   overflow-wrap: break-word;
   word-wrap: break-word;
   white-space: normal;
@@ -298,13 +309,16 @@ textarea {
   margin: auto;
 }
 .donation-img img {
-  width: 627px;
-  height: 400px;
+  width: 40vw;
+  height: 65vh;
   align-items: center;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .donation-content p {
   padding: 0 0 15px 0;
+}
+.donation-content .btn i {
+  margin-right: 7px;
 }
 
 /* -----------------------Footer section--------------- */
@@ -333,6 +347,9 @@ textarea {
 .footer .section .footer-icons {
   padding-top: 20px;
 }
+.footer .section .social-media {
+  text-align: center;
+}
 
 @keyframes fade {
   from {
@@ -343,18 +360,228 @@ textarea {
   }
 }
 /* -----------------------Responsive-Design-all-Sections--------------- */
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {
-    font-size: 11px;
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+  header {
+    padding: 0 20px 0 20px;
+  }
+  .section {
+    display: flex;
+    flex-direction: column;
+  }
+  .section .hero-info h1 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    padding: 0 30px 0 30px;
+  }
+  .section .hero-info p {
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: rgb(237, 255, 250);
+    padding: 0 30px 0 30px;
+  }
+  .section .hero-info button {
+    margin-top: 5px;
+  }
+  .about-img img,
+  .donation-img img {
+    width: 100%;
+    height: 100%;
+  }
+  .contact-info-item i {
+    font-size: 16px;
+  }
+  nav .menu-btn i {
+    display: block;
+    color: #373b48;
+  }
+  #click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+  }
+  nav ul {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+    z-index: 2002;
+  }
+  #click:checked ~ ul {
+    left: 0;
+  }
+  nav ul li {
+    width: 100%;
+    margin: 10px 0;
+  }
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a {
+    margin-left: 0px;
+  }
+  nav ul li a:hover {
+    background: none;
+    color: cyan;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .navbar {
-    display: grid;
-    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
-    grid-gap: 3px;
-    grid-auto-flow: dense;
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+  header {
+    padding: 0 20px 0 20px;
+  }
+  .section {
+    display: flex;
+    flex-direction: column;
+  }
+  .section .hero-info h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    padding: 0 30px 0 30px;
+  }
+  .section .hero-info p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: rgb(237, 255, 250);
+    padding: 0 30px 0 30px;
+  }
+  .section .hero-info button {
+    margin-top: 8px;
+  }
+  .about-img img,
+  .donation-img img {
+    width: 100%;
+    height: 100%;
+  }
+  .contact-info-item i {
+    font-size: 16px;
+  }
+  nav .menu-btn i {
+    display: block;
+    color: #373b48;
+  }
+  #click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+  }
+  nav ul {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+    z-index: 2002;
+  }
+  #click:checked ~ ul {
+    left: 0;
+  }
+  nav ul li {
+    width: 100%;
+    margin: 10px 0;
+  }
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a {
+    margin-left: 0px;
+  }
+  nav ul li a:hover {
+    background: none;
+    color: cyan;
+  }
+}
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px) {
+  header {
+    padding: 0 20px 0 20px;
+  }
+  .section {
+    display: flex;
+    flex-direction: column;
+  }
+  .section .hero-info h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    padding: 0 30px 0 30px;
+  }
+  .section .hero-info p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(237, 255, 250);
+    padding: 0 30px 0 30px;
+  }
+  .section .hero-info button {
+    margin-top: 10px;
+  }
+  .about-img img,
+  .donation-img img {
+    width: 100%;
+    height: 100%;
+  }
+  .contact-info-item i {
+    font-size: 16px;
+  }
+  nav .menu-btn i {
+    display: block;
+    color: #373b48;
+  }
+  #click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+  }
+  nav ul {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+    z-index: 2002;
+  }
+  #click:checked ~ ul {
+    left: 0;
+  }
+  nav ul li {
+    width: 100%;
+    margin: 10px 0;
+  }
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a {
+    margin-left: 0px;
+  }
+  nav ul li a:hover {
+    background: none;
+    color: cyan;
   }
 }

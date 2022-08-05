@@ -18,23 +18,29 @@
   <body>
     <div class="main-container">
       <header>
-        <nav class="navbar">
-          <div class="logo"><h1>OEB</h1></div>
-          <div class="nav-element"><a href="#home">Home</a></div>
-          <div class="nav-element"><a href="#about">About</a></div>
-          <div class="nav-element"><a href="#donations">Donations</a></div>
-          <div class="nav-element"><a href="#events">Events</a></div>
-          <div class="nav-element"><a href="#news">News</a></div>
-          <div class="nav-element"><a href="#volunteer">Volunteer</a></div>
-          <div class="nav-element"><a href="#training">Training</a></div>
-          <div class="nav-element"><a href="#contact">Contact</a></div>
-          <button class="btn">
-            <i class="fa-solid fa-heart-circle-plus"></i>Donate
-          </button>
-          <i class="fas fa-bars" style="display: none"></i>
+        <nav id="navbar">
+          <div class="logo">OEB</div>
+          <input type="checkbox" id="click" />
+          <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+          </label>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Donations</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Training</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contact</a></li>
+            <div class="nav-btn nav-element">
+              <button class="btn">
+                <i class="fa-solid fa-heart-circle-plus"></i>Donate
+              </button>
+            </div>
+          </ul>
         </nav>
+
         <section class="hero-section">
-          <!-- <div class="section"> -->
           <div class="section header">
             <div class="hero-info">
               <h1>
@@ -57,115 +63,7 @@
                 Learn More <i class="fa-solid fa-arrow-right"></i>
               </button>
             </div>
-            <!-- <div class="hero-img">
-              <div class="slides-img fade">
-                <div class="numbertext">1 / 6</div>
-                <img src="images/hero-1.jpg" />
-                <div class="text">image information text talk</div>
-              </div>
-
-              <div class="slides-img fade">
-                <div class="numbertext">2 / 6</div>
-                <img src="images/hero-2.jpg" />
-                <div class="text">image information text 1</div>
-              </div>
-
-              <div class="slides-img fade">
-                <div class="numbertext">3 / 6</div>
-                <img src="images/hero-3.jpg" />
-                <div class="text">image information text 2</div>
-              </div>
-              <div class="slides-img fade">
-                <div class="numbertext">4 / 6</div>
-                <img src="images/hero-4.jpg" />
-                <div class="text">image information text 3</div>
-              </div>
-              <div class="slides-img fade">
-                <div class="numbertext">5 / 6</div>
-                <img src="images/hero-5.jpg" />
-                <div class="text">image information text 4</div>
-              </div>
-              <div class="slides-img fade">
-                <div class="numbertext">6 / 6</div>
-                <img src="images/hero-6.jpg" />
-                <div class="text">image information text 5</div>
-              </div>
-              <div style="text-align: center">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-              </div>
-            </div> -->
           </div>
-
-          <!-- <div class="section">
-            <div class="hero-info">
-              <h1>
-                The Organization of Engineers Bangladesh (OEB) a Global online
-                network of Graduate Sunni Engineers
-              </h1>
-              <p>
-                The Organization of Engineers Bangladesh (OEB) is a non-profit
-                organization that aims to provide technical education to the
-                people of Bangladesh. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Nostrum eveniet laboriosam qui libero velit,
-                nemo excepturi saepe. Odio, hic sed! Lorem ipsum dolor, sit amet
-                consectetur adipisicing elit. Impedit, nesciunt? Lorem ipsum
-                dolor sit amet consectetur, adipisicing elit. Dolore magnam
-                facilis sunt iusto voluptatibus nemo soluta explicabo veritatis
-                labore exercitationem! Lorem, ipsum dolor sit amet consectetur
-                adipisicing elit. Quos ducimus temporibus suscipit molestiae.
-              </p>
-              <button class="btn">
-                Learn More <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </div>
-            <div class="hero-img">
-              <div class="slides-img fade">
-                <div class="numbertext">1 / 6</div>
-                <img src="images/hero-1.jpg" />
-                <div class="text">image information text talk</div>
-              </div>
-
-              <div class="slides-img fade">
-                <div class="numbertext">2 / 6</div>
-                <img src="images/hero-2.jpg" />
-                <div class="text">image information text 1</div>
-              </div>
-
-              <div class="slides-img fade">
-                <div class="numbertext">3 / 6</div>
-                <img src="images/hero-3.jpg" />
-                <div class="text">image information text 2</div>
-              </div>
-              <div class="slides-img fade">
-                <div class="numbertext">4 / 6</div>
-                <img src="images/hero-4.jpg" />
-                <div class="text">image information text 3</div>
-              </div>
-              <div class="slides-img fade">
-                <div class="numbertext">5 / 6</div>
-                <img src="images/hero-5.jpg" />
-                <div class="text">image information text 4</div>
-              </div>
-              <div class="slides-img fade">
-                <div class="numbertext">6 / 6</div>
-                <img src="images/hero-6.jpg" />
-                <div class="text">image information text 5</div>
-              </div>
-              <div style="text-align: center">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-              </div>
-            </div>
-          </div> -->
         </section>
       </header>
       <main>
@@ -359,7 +257,10 @@
       <footer>
         <section class="footer">
           <div class="section">
-            <div class="footer-logo"><h1>OEB</h1></div>
+            <div class="footer-logo">
+              <h1>OEB</h1>
+              <h5>Organization of Engineers Bangladesh</h5>
+            </div>
             <div class="footer-content">
               <h4>Donations</h4>
               <ul>
